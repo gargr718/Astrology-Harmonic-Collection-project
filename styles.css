@@ -1,0 +1,331 @@
+body {
+  margin: 0;
+  background-color: #0d0d16;
+  background-image: url("background.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: repeat;
+  text-align: center;
+  min-height: 100vh;
+}
+.moon-img {
+  display: block;
+  width: auto;
+  height: 380px;        
+  aspect-ratio: 1 / 1;
+  object-fit: contain;
+  transform-origin: center center;
+}
+
+.moon-link {
+  display: inline-block;
+  text-decoration: none;
+  color: inherit;
+}
+
+
+.background-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  pointer-events: none;
+  z-index: -1;
+}
+
+.moon-container {
+  text-align: center;
+  padding-top: 120px;   
+}
+
+.moon-heading {
+  font-size: 100px;
+  margin-top: -50px;
+  margin-bottom: 10px;
+  letter-spacing: 2px;
+  min-height: 56px;
+  color: rgba(197, 182, 182, 0.95);
+font-family: "Amatic SC", sans-serif;
+font-weight: 100;
+  text-shadow:
+    0 0 1px rgba(164, 148, 148, 0.885),
+    0 0 2px rgba(164, 148, 148, 0.849);
+}
+
+.subtitle {
+  font-family: "Bodoni Moda", serif;
+  font-size: 22px;
+  font-weight: 10;
+  color: rgba(224, 197, 197, 0.75);
+  margin-top: 10px;
+  margin-bottom: 40px;
+  text-align: center;
+  opacity: 0;
+  animation: homepageFadeIn 1.2s ease forwards;
+  animation-delay: 2s;
+}
+
+@keyframes homepageFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.moon-row {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;    
+  height: 380px;
+  z-index: 2;
+}
+
+.moon-item {
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  z-index: 1;
+}
+
+.moon-item img {
+  transition: 
+    filter 0.6s ease,
+    transform 0.6s ease,
+    opacity 0.3s ease;
+}
+
+
+
+.moon-item1 img {
+  width: 240px;
+  opacity: 0.9;
+  filter: brightness(0.6) saturate(0.8);
+  margin-left: 150px;}
+
+.moon-item1:hover img {
+  opacity: 0.3;
+  filter: brightness(0.6);
+}
+
+.moon-item2 img {
+  width: 140px;
+}
+
+.moon-item3 img {
+  width: 350px;
+}
+
+.moon-item4 img {
+  width: 380px;
+}
+
+.moon-item5 img {
+  width: 350px;
+}
+
+.moon-item6 img {
+  width: 310px;
+}
+
+.moon-content {
+  position: relative;
+  display: inline-block;
+  align-items: center;
+}
+
+.moon-item1 .moon-content { transform: translate(120px, 20px); }
+.moon-item2 .moon-content { transform: translate(140px, -10px); }
+.moon-item3 .moon-content { transform: translate(140px, -30px); }
+.moon-item4 .moon-content { transform: translate(-20px, -70px); }
+.moon-item5 .moon-content { transform: translate(-150px, -40px); }
+.moon-item6 .moon-content { transform: translate(-200px, -15px); }
+
+.moon-item:hover img {
+  filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.3));
+  opacity: 1;
+  transform: scale(1.08);
+}
+
+.moon-item {
+  z-index: 1;
+}
+
+.moon-item:hover {
+  z-index: 10;
+}
+
+.moon-row:hover .moon-item {
+  opacity: 0.4;
+}
+
+.moon-row .moon-item:hover {
+  opacity: 1;
+}
+
+.moon-label {
+  position: absolute;
+  top: 100%;                 
+  left: 50%;                
+  transform: translateX(-50%);
+  opacity: 0;
+  font-size: 16px;
+  transition: opacity 0.4s ease;
+  color: rgba(224, 197, 197, 0.9);
+  font-family: "Inter", sans-serif;
+  font-weight: 200;
+  text-align: center;
+  pointer-events: none;
+}
+
+.moon-item1 .moon-label {
+  margin-left: 70px;
+  margin-top: -30px;
+  width: 180px;
+}
+
+.moon-item2 .moon-label {
+  margin-top: -30px;
+  margin-left: -5px;
+  width: 200px;
+}
+
+.moon-item3 .moon-label {
+  margin-left: -40px;
+  margin-top: -30px;
+}
+
+.moon-item4 .moon-label {
+  margin-left: 15px;
+  margin-top: -20px;
+  width: 200px;
+
+}
+
+.moon-item5 .moon-label {
+ margin-left: 50px;
+ margin-top: -20px;
+ width: 200px;
+}
+
+.moon-item6 .moon-label {
+  margin-top: -20px;
+  margin-left: -10px;
+  width: 180px;
+}
+
+
+.moon-item:hover .moon-label {
+  opacity: 1;
+}
+
+.orbit-wrapper {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 80px;
+}
+
+.orbit-wrapper::before {
+  content: "";
+  position: absolute;
+  width: 85%;
+  height: 200px;                 
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  border-radius: 50%;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  object-position: 0.6;
+  visibility: hidden;
+}
+
+
+@media (max-width: 740px) {
+
+  .moon-container {
+    padding-top: 80px;
+  }
+
+  .moon-heading {
+    font-size: 50px;
+    margin-top: 0;
+    letter-spacing: 1px;
+  text-align: center;
+  }
+
+  .moon-row {
+    height: 220px;
+  }
+
+  .moon-img {
+    height: 130px;
+  }
+
+  .moon-item1 img { width: 120px; }
+  .moon-item2 img { width: 65px; }
+  .moon-item3 img { width: 150px; }
+  .moon-item4 img { width: 150px; }
+  .moon-item5 img { width: 150px; }
+  .moon-item6 img { width: 140px; }
+
+  .moon-item1 .moon-content { transform: translate(20px, 9px); }
+  .moon-item2 .moon-content { transform: translate(20px, -4px); }
+  .moon-item3 .moon-content { transform: translate(20px, -22px); }
+  .moon-item4 .moon-content { transform: translate(-40px, -40px); }
+  .moon-item5 .moon-content { transform: translate(-100px, -22px); }
+  .moon-item6 .moon-content { transform: translate(-130px, 3px); }
+
+  .moon-label {
+    font-size: 10px;
+  }
+
+  .moon-item1 .moon-label {
+    margin-left: 75px;
+    margin-top: 5px;
+    width: 70px;
+  }
+
+  .moon-item2 .moon-label {
+    margin-left: -5px;
+    margin-top: 5px;
+    width: 70px;
+  }
+
+  .moon-item3 .moon-label {
+    margin-left: -20px;
+    margin-top: 5px;
+  }
+
+  .moon-item4 .moon-label {
+    margin-left: 2px;
+    margin-top: 5px;
+    width: 70px;
+  }
+
+  .moon-item5 .moon-label {
+    margin-left: 25px;
+    margin-top: 5px;
+      width: 70px; }
+
+  .moon-item6 .moon-label {
+    margin-left: -15px;
+    margin-top: 5px;
+      width: 70px;
+  }
+
+
+.subtitle {
+    font-size: 15px;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
